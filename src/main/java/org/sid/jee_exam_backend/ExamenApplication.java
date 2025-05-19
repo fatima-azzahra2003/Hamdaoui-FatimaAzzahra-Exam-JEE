@@ -2,8 +2,6 @@ package org.sid.jee_exam_backend;
 
 import org.sid.jee_exam_backend.entities.*;
 import org.sid.jee_exam_backend.repositories.*;
-import org.sid.jee_exam_backend.entities.*;
-import org.sid.jee_exam_backend.repositories.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.Date;
 
 @SpringBootApplication
-public class JeeExamBackendApplication implements CommandLineRunner {
+public class ExamenApplication implements CommandLineRunner {
 
     private final ClientRepository clientRepository;
     private final CreditRepository creditRepository;
@@ -20,12 +18,12 @@ public class JeeExamBackendApplication implements CommandLineRunner {
     private final CreditProfessionnelRepository creditProfessionnelRepository;
     private final RemboursementRepository remboursementRepository;
 
-    public JeeExamBackendApplication(ClientRepository clientRepository,
-                                     CreditRepository creditRepository,
-                                     CreditPersonnelRepository creditPersonnelRepository,
-                                     CreditImmobilierRepository creditImmobilierRepository,
-                                     CreditProfessionnelRepository creditProfessionnelRepository,
-                                     RemboursementRepository remboursementRepository) {
+    public ExamenApplication(ClientRepository clientRepository,
+                             CreditRepository creditRepository,
+                             CreditPersonnelRepository creditPersonnelRepository,
+                             CreditImmobilierRepository creditImmobilierRepository,
+                             CreditProfessionnelRepository creditProfessionnelRepository,
+                             RemboursementRepository remboursementRepository) {
         this.clientRepository = clientRepository;
         this.creditRepository = creditRepository;
         this.creditPersonnelRepository = creditPersonnelRepository;
@@ -35,7 +33,7 @@ public class JeeExamBackendApplication implements CommandLineRunner {
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(JeeExamBackendApplication.class, args);
+        SpringApplication.run(ExamenApplication.class, args);
     }
 
     @Override
