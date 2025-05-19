@@ -34,6 +34,7 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+
     public ClientDTO getClient(Long id) {
         return clientRepository.findById(id).map(clientMapper::toDTO).orElse(null);
     }

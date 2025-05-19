@@ -15,6 +15,7 @@ public class ClientMapper {
         return dto;
     }
 
+
     public Client fromDTO(ClientDTO dto) {
         if (dto == null) return null;
         Client client = new Client();

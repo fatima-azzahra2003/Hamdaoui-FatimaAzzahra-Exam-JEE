@@ -13,3 +13,4 @@ public interface CreditService {
     // Ajout de la méthode updateCredit
     CreditDTO updateCredit(Long id, CreditDTO creditDTO);
 }
+

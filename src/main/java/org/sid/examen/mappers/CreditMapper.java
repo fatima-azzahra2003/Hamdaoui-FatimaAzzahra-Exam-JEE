@@ -18,6 +18,7 @@ public class CreditMapper {
             return dto;
         }
 
+
         else if (credit instanceof CreditImmobilier ci) {
             CreditImmobilierDTO dto = new CreditImmobilierDTO();
             fillBaseFields(dto, credit);
