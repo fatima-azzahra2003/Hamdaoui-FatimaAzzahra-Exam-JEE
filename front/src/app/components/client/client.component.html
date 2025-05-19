@@ -1,0 +1,69 @@
+<div class="container mt-2">
+  <ng-container *ngIf="clients$ | async as clients; else failureOrLoading">
+    <div class="card">
+      <div class="card-header">Customers</div>
+      <div class="card-body">
+        <!-- searching with keyword -->
+        <!-- <form [formGroup]="searchForm" (ngSubmit)="handleSearch()" class="mb-3">
+          <div class="row g-2 align-items-center">
+            <div class="col-auto">
+              <label class="col-form-label">Mot-clé</label>
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                formControlName="keyword"
+                class="form-control"
+                placeholder="Rechercher un client..."
+              />
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-info">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+        </form> -->
+
+        <!-- Table of customers -->
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>EMAIL</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for(c of clients; track c.id){
+            <tr>
+              <td>{{ c.id }}</td>
+              <td>{{ c.nom }}</td>
+              <td>{{ c.email }}</td>
+              <!-- <td>
+                <button class="btn btn-danger" (click)="handleDelete(c)">
+                  <i class="bi bi-trash"></i>
+                </button>
+              </td> -->
+              <!-- <td>
+                <button class="btn btn-success" (click)="handleAccounts(c)">
+                  Credits
+                </button>
+              </td> -->
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #failureOrLoading class="text-danger">
+    @if(errorMessage){
+    <div class="text-danger">
+      {{ errorMessage }}
+    </div>
+    }@else {
+    <div>Chargement des customers...</div>
+    }
+  </ng-template>
+</div>
